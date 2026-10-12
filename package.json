@@ -1,0 +1,38 @@
+{
+  "name": "plugin-ops-store",
+  "version": "0.1.0",
+  "description": "Shared SQLite store for DSH ops plugins (frp egress leases, notify, audit). Secrets stay in ~/.env — never in DB.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./lib/db.js": "./lib/db.js",
+    "./lib/frp.js": "./lib/frp.js",
+    "./lib/notify.js": "./lib/notify.js",
+    "./lib/resolve.js": "./lib/resolve.js"
+  },
+  "files": [
+    "index.js",
+    "lib/**",
+    "cordis.patch.yml",
+    "README.md",
+    "docs/**"
+  ],
+  "keywords": [
+    "agent-plugin",
+    "sqlite",
+    "ops"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "^0.2.1-alpha.2"
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  }
+}

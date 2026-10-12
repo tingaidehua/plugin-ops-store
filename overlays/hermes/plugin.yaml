@@ -1,0 +1,11 @@
+name: plugin-ops-store
+version: "0.1.0"
+description: Shared SQLite for ops/frp/notify. DSH-native core; Hermes overlay via Node invoke.
+provides_tools:
+  - ops_db_status
+  - ops_frp_alloc
+  - ops_frp_leases
+  - ops_frp_release
+  - ops_notify_push
+  - ops_notify_list
+  - ops_notify_ack
