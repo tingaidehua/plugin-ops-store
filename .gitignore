@@ -4,3 +4,7 @@ node_modules/
 .env
 credentials.env
 
+
+__pycache__/
+*.pyc
+
