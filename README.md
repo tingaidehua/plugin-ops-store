@@ -23,7 +23,7 @@ Shared **SQLite** state for DSH 运维插件（frp 出网租约、通知、kv、
 
 ```bash
 dsh plugin --profile web add github:tingaidehua/plugin-ops-store
-# 或 /opt/dsh-ops/plugin-ops-store
+# 或 /opt/agent-plugins/plugin-ops-store
 ```
 
 其它插件通过 sibling 路径导入：

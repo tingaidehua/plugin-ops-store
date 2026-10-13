@@ -3,7 +3,26 @@ from __future__ import annotations
 import json, os, subprocess
 from pathlib import Path
 
-PLUGIN_ROOT = Path(__file__).resolve().parents[2]
+def _plugin_root() -> Path:
+    here = Path(__file__).resolve().parent
+    cand = here.parents[1]
+    if (cand / "bin" / "invoke.mjs").exists():
+        return cand
+    env = os.environ.get("PLUGIN_OPS_STORE_ROOT")
+    if env and (Path(env) / "bin" / "invoke.mjs").exists():
+        return Path(env)
+    for p in (
+        Path(r"C:\workspace\agent-plugins\plugin-ops-store"),
+        Path.home() / "workspace" / "dsh-ops" / "plugin-ops-store",
+        Path("/opt/agent-plugins/plugin-ops-store"),
+        Path("/opt/plugin-ops/plugin-ops-store"),
+    ):
+        if (p / "bin" / "invoke.mjs").exists():
+            return p
+    return cand
+
+
+PLUGIN_ROOT = _plugin_root()
 INVOKE = PLUGIN_ROOT / "bin" / "invoke.mjs"
 
 def _run(tool: str, params: dict | None = None) -> str:

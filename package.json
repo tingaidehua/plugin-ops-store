@@ -19,10 +19,16 @@
     "docs/**"
   ],
   "keywords": [
+    "dsh-plugin",
     "agent-plugin",
     "sqlite",
     "ops"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tingaidehua/plugin-ops-store.git"
+  },
+  "homepage": "https://github.com/tingaidehua/plugin-ops-store#readme",
   "license": "MIT",
   "dsh": {
     "bundle": {

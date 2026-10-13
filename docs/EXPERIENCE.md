@@ -18,4 +18,4 @@
 
 ## 部署
 
-插件必须并列安装在同一机器（如 `/opt/dsh-ops/*`），否则设 `PLUGIN_OPS_STORE_DIR`。
+插件必须并列安装在同一机器（如 `/opt/agent-plugins/*`），否则设 `PLUGIN_OPS_STORE_DIR`。
